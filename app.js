@@ -2,9 +2,17 @@
 // unordered list of 2 grocery items. Render this component to
 // the div tag in index.html with an id of app
 
-const GroceryListItem = (props) => (
-  <li>{props.item}</li>
-);
+class GroceryListItem extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <li>{this.props.item}</li>
+    );
+  }
+}
 
 const GroceryList = (props) => {
   return (
