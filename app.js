@@ -3,22 +3,15 @@
 // the div tag in index.html with an id of app
 
 const GroceryListItem = (props) => (
-  <li>{ props.itemName }</li>
+  <li>{props.item}</li>
 );
 
-const FrozenPizza = () => (
-  <GroceryListItem itemName='Frozen Pizza'/>
-);
+const GroceryList = (props) => {
+  return (
+    <ul>
+      {props.items.map(item => <GroceryListItem item={item} />)}
+    </ul>
+  )
+};
 
-const CaramelGelato = () => (
-  <GroceryListItem itemName='Sea Salt Caramel Gelato' />
-);
-
-const GroceryList = () => (
-  <ul>
-    <FrozenPizza />
-    <CaramelGelato />
-  </ul>
-);
-
-ReactDOM.render(<GroceryList />, document.getElementById('app'));
+ReactDOM.render(<GroceryList items={['Frozen Pizza', 'Sea Salt Caramel Gelato']} />, document.getElementById('app'));
